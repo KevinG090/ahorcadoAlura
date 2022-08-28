@@ -1,0 +1,80 @@
+:root{
+    --main-color:#E5E5E5;
+    --white-color:#FFFFFF;
+    --light-blue:#D8DFE8;
+    --dark-blue:#0A3871;
+    --gray-color:#495057;
+}
+.container-game{
+    width: 100%;
+}
+
+/* ---Imagenes--- */
+.container-img{
+    width: 100%;
+    display: flex;
+    position: relative;
+    margin:60px auto 20px auto ;
+    justify-content: center;
+}
+#space-img img{
+    width: 250px;
+}
+/* ---Words--- */
+.container-words{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto 0 autp;
+    justify-content: center;
+    text-align: center;
+}
+#lineas{
+    margin-top: 50px;
+    display: block;
+}
+#lineas-img{
+    width: 50px;
+    margin: 0 20px;
+}
+#letters{
+    margin-top:30px ;
+}
+#input-letters,#input-letters:focus-visible{
+    width: 50%;
+    background: var(--main-color);
+    color: var(--gray-color);
+    text-align: center;
+    padding: 1rem;
+    font-size: 20px;
+    letter-spacing: 20px;
+    border: none;
+    outline: none;
+}
+/* Botones */
+.container-buttons{
+    margin: auto;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+#buttons{
+    width: 100%;
+    flex-direction: row;
+}
+#buttons a{
+    font-size:16px ;
+    font-weight: bold;
+    margin-top: 0;
+}
+#nuevoJuego{
+    padding: 1rem 8rem;
+    background: var(--dark-blue);
+    color: var(--light-blue);
+}
+#Desistir{
+    padding: 1rem 9rem;
+    margin-bottom: 0;
+    background: var(--light-blue);
+    color: black;
+}

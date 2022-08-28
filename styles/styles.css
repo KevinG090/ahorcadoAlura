@@ -32,6 +32,7 @@ header{
     left: -10px;
 }
 
+
 /*Botones*/
 .container-options{
     width: 90%;
@@ -44,25 +45,19 @@ header{
     display: flex;
     flex-direction: column;
 }
-#buttons button{
+#buttons a{
     margin: 30px auto;
-    font-size:18px ;
+    font-size:20px ;
     border: 1px solid var(--dark-blue);
     border-radius: 30px;
     cursor: pointer;
-    transition: padding 1s;
-}
-button a{
+    transition: padding 1s ;
     text-decoration: none;
-    color:black;
 }
 #startGame{
     padding: 1.6rem 11rem;
     background: var(--dark-blue);
-    color: var(--main-color);
-}
-#startGame a{
-    color: var(--main-color);
+    color: var(--light-blue);
 }
 #startGame:hover{
     font-weight: bold;
@@ -72,6 +67,7 @@ button a{
     padding: 1.6rem 10rem;
     margin-bottom: 0;
     background: var(--light-blue);
+    color: black;
 }
 #addWord:hover{
     font-weight: bold;
