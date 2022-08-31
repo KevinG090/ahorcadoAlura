@@ -52,11 +52,11 @@ const Verificar =(letra)=>{
     }
 }
 const mensaje =(accion)=>{
+    continuar = false;
     if (accion=="Perdiste"){
         let errores = document.querySelector("#error").style.display="flex";
         setTimeout(function(){
             errores =  document.querySelector("#error").style.display="none";
-            continuar = false;
         },3000);
     }
     else if (accion=="Ganaste"){
@@ -68,7 +68,7 @@ const mensaje =(accion)=>{
 }
 let letrasExcritas="";
 input.addEventListener("keydown",(e)=>{
-    const letra = e.key;
+    let letra = e.key;
     if (letra.charCodeAt()>96&&letra.charCodeAt()<123||letra.charCodeAt()==46||letra.charCodeAt()==10||letra.charCodeAt()==32||letra.charCodeAt()==44||letra.charCodeAt()>47&&letra.charCodeAt()<58) {
         if(continuar && (letrasExcritas.includes(letra)==false)){
             letrasExcritas += letra;
@@ -76,5 +76,31 @@ input.addEventListener("keydown",(e)=>{
         }
     }; 
 })
+
+const boton_addWords = document.querySelector("#boton-addWords");
+const agregarPalabra = document.querySelector(".agregarPalabra");
+const GuardarPalabra = document.querySelector("#GuardarPalabra");
+const CancelarPalabra = document.querySelector("#Cancelar");
+
+boton_addWords.addEventListener("click",()=>{
+    document.querySelector(".container-addWord").style.display="flex"
+})
+GuardarPalabra.addEventListener("click",()=>{
+    let nuevaPalabra = agregarPalabra.value;
+    if (nuevaPalabra.value != ""){
+        listaPalabras.push(`${nuevaPalabra}`);
+        agregarPalabra.value="";
+        document.querySelector(".container-addWord").style.display="none" 
+    }
+})
+CancelarPalabra.addEventListener("click",()=>{
+    document.querySelector(".container-addWord").style.display="none" 
+})
+
+
+
+
+
+
 
 
