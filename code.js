@@ -11,7 +11,7 @@ function listado (){
 juego()
 function juego (){
     listado()
-    ahorcado.src=`../images/img${1}.png`;
+    ahorcado.src=`./images/img${1}.png`;
     document.querySelector("#input-letters").readOnly=false;
     input.value=""
     lineas.innerHTML="";
@@ -24,7 +24,7 @@ function juego (){
     for (i=0;i<palabra[0].length;i++){
         cantidadDeLineas += `<div style="display:block  ;margin:auto;">
                                 <p class="letraAdivinar item${i+1}" style="color: white;">${palabra[0][i]}</p>
-                                <img id="lineas-img" src="../images/Rectangulo.png" alt="">
+                                <img id="lineas-img" src="./images/Rectangulo.png" alt="">
                             </div>`
     };
 
@@ -58,9 +58,9 @@ function juego (){
             intento++
             console.log(`NO esta la letra ${letra} <br> ${palabra[0].includes(letra)}`);
             if (intento<9){
-                ahorcado.src=`../images/img${intento}.png`;
+                ahorcado.src=`./images/img${intento}.png`;
             }else if (intento==9){
-                ahorcado.src=`../images/img${intento}.png`;
+                ahorcado.src=`./images/img${intento}.png`;
                 document.querySelector("#input-letters").readOnly=true;
                 mensaje("Perdiste")
             }
