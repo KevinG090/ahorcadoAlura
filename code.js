@@ -3,7 +3,7 @@ const input = document.querySelector("#input-letters");
 const lineas = document.querySelector("#lineas");
 const ahorcado = document.querySelector("#ahorcado");
 let palabra = null ;
-var listadoPalabras = ["uno","dos","tres","cuatro","cinco","elefante","hipopotamo"];
+var listadoPalabras = ["html","javascript","python","react","node","funciones","arreglos"];
 function listado (){
     const aleatorio = Math.round(Math.random()*(listadoPalabras.length-1));
     palabra=[listadoPalabras[aleatorio]];
