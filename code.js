@@ -3,15 +3,16 @@ const input = document.querySelector("#input-letters");
 const lineas = document.querySelector("#lineas");
 const ahorcado = document.querySelector("#ahorcado");
 let palabra = null ;
-var listaPalabras = ["uno","dos","tres","cuatro","cinco","elefante","hipopotamo"];
+var listadoPalabras = ["uno","dos","tres","cuatro","cinco","elefante","hipopotamo"];
 function listado (){
-    const aleatorio = Math.round(Math.random()*(listaPalabras.length-1));
-    palabra=[listaPalabras[aleatorio]];
+    const aleatorio = Math.round(Math.random()*(listadoPalabras.length-1));
+    palabra=[listadoPalabras[aleatorio]];
 }
 juego()
 function juego (){
     listado()
     ahorcado.src=`../images/img${1}.png`;
+    document.querySelector("#input-letters").readOnly=false;
     input.value=""
     lineas.innerHTML="";
     let intento = 1 ;
@@ -91,31 +92,34 @@ function juego (){
         }; 
     })
 }
-const boton_addWords = document.querySelector("#boton-addWords");
+
+
+const nuevoJuego = document.querySelector("#nuevoJuego");
+nuevoJuego.addEventListener("click",()=>{
+    juego()
+})
+
 const agregarPalabra = document.querySelector(".agregarPalabra");
 const GuardarPalabra = document.querySelector("#GuardarPalabra");
-const CancelarPalabra = document.querySelector("#Cancelar");
 
-boton_addWords.addEventListener("click",()=>{
-    document.querySelector(".container-addWord").style.display="flex"
-})
 GuardarPalabra.addEventListener("click",()=>{
     let nuevaPalabra = agregarPalabra.value;
     if (nuevaPalabra.value != ""){
-        listaPalabras.push(`${nuevaPalabra}`);
+        listadoPalabras.push(`${nuevaPalabra}`);
         agregarPalabra.value="";
-        juego()
-        document.querySelector(".container-addWord").style.display="none" 
     }
 })
-CancelarPalabra.addEventListener("click",()=>{
-    document.querySelector(".container-addWord").style.display="none" 
-})
 
-
-
-
-
-
-
-
+function start(){
+    document.querySelector("#start").style.display = "none";
+    document.querySelector("#game").style.display = "flex";
+    juego()
+}
+function addWord(){
+    document.querySelector("#start").style.display = "none";
+    document.querySelector("#addWord").style.display = "flex";
+}
+function devolverse(){
+    document.querySelector("#addWord").style.display = "none";
+    document.querySelector("#start").style.display = "flex";
+}
